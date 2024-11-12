@@ -7,7 +7,27 @@ namespace intro_c_
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("It's easy to win forgiveness for being wrong;\nbeing right is what gets you into real trouble.\nBjarne Stroustrup") ;
+            Console.Write("Horizontal(1) or Vertical(2)?");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Length of line:");
+            int length = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Symbol:");
+            char symbol = Convert.ToChar(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    for(int i = 0; i < length; i++)
+                    {
+                        Console.Write(symbol);
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < length; i++)
+                    {
+                        Console.WriteLine(symbol);
+                    }
+                    break;
+            }
         }
     }
 }
