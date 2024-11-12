@@ -7,7 +7,21 @@ namespace intro_c_
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("It's easy to win forgiveness for being wrong;\nbeing right is what gets you into real trouble.\nBjarne Stroustrup") ;
+            int max=0, min=0, sum=0, dobutok=1;
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            max = x;
+            min = x;
+            for (int i = 0; i < 4; i++)
+            {
+                x = Convert.ToInt32(Console.ReadLine());
+                if(x > max) { max = x; }
+                if(x < min) { min = x; }
+                sum = sum + x;
+                dobutok = dobutok * x;
+                Console.Clear();
+            }
+            Console.WriteLine($"Min:{min}\nMax:{max}\nSum:{sum}\nMultiply:{dobutok}");
         }
     }
 }
