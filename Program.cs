@@ -7,7 +7,12 @@ namespace intro_c_
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("It's easy to win forgiveness for being wrong;\nbeing right is what gets you into real trouble.\nBjarne Stroustrup") ;
+            int x = Convert.ToInt32(Console.ReadLine());
+            while(x > 0)
+            {
+                Console.Write(x%10);
+                x = x / 10;
+            }
         }
     }
 }
