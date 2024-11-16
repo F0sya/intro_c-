@@ -8,27 +8,20 @@ namespace intro_c_
     {
         static void Main(string[] args)
         {
-            Console.InputEncoding = Encoding.Unicode;
-            Console.OutputEncoding = Encoding.Unicode;
-            Console.Write("Введіть шестизначне число: ");
-            string num = Console.ReadLine();
-            if (num.Length != 6)
-            {
-                Console.WriteLine("Помилка: введіть саме шестизначне число.");
-            }
-            else
-            {
-                Console.Write("Введіть номер першого розряду для заміни: ");
-                int firstDigit = Convert.ToInt32(Console.ReadLine()) - 1;
-                Console.Write("Введіть номер другого розряду для заміни: ");
-                int secondDigit = Convert.ToInt32(Console.ReadLine()) - 1;
-                StringBuilder sb = new StringBuilder();
-                sb.Append(num);
+            Console.Write("Enter a temperature:");
+            double temp = Convert.ToInt32(Console.ReadLine());
+            Console.Write("To Celsius(1) or Fahrenheint(2)?");
+            int choice = Convert.ToInt32(Console.ReadLine());
 
-                (sb[firstDigit], sb[secondDigit]) = (sb[secondDigit], sb[firstDigit]);
-                Console.WriteLine(sb);
+            switch (choice)
+            {
+                case 1:
+                    Console.Write($"Temperature in Celsius: {temp} F = {(temp-32)*5/9} C");
+                    break;
+                case 2:
+                    Console.Write($"Temperature in Fahreheint: {temp} C = {(temp * 9 / 5) + 32} F");
+                    break;
             }
-
         }
     }
 }
