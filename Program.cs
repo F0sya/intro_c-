@@ -8,20 +8,24 @@ namespace intro_c_
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter a temperature:");
-            double temp = Convert.ToInt32(Console.ReadLine());
-            Console.Write("To Celsius(1) or Fahrenheint(2)?");
-            int choice = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter first digit:");
+            int firstDigit = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter second digit:");
+            int secondDigit = Convert.ToInt32(Console.ReadLine());
 
-            switch (choice)
+            if(firstDigit > secondDigit)
             {
-                case 1:
-                    Console.Write($"Temperature in Celsius: {temp} F = {(temp-32)*5/9} C");
-                    break;
-                case 2:
-                    Console.Write($"Temperature in Fahreheint: {temp} C = {(temp * 9 / 5) + 32} F");
-                    break;
+                (firstDigit, secondDigit) = (secondDigit, firstDigit);
             }
+
+            for(int i = firstDigit; i < secondDigit; i++)
+            {
+                if(i % 2 == 0)
+                {
+                    Console.Write(i + " ");
+                }
+            }
+
         }
     }
 }
